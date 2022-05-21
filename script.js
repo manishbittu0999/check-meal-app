@@ -43,7 +43,9 @@ function searchForMeal() {
           `;
 
           let favs = JSON.parse(localStorage.getItem("favourites"));
-          let addedCheck = favs.includes(meal.idMeal);
+          let addedCheck = false;
+          if(favs != null)
+            addedCheck = favs.includes(meal.idMeal);
 
           if(addedCheck){
             list += `
